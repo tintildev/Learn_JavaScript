@@ -1,0 +1,5 @@
+// Einzeiliger Kommentar
+
+/*
+Mehrzeiliger Kommentar
+*/
