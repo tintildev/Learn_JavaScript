@@ -1,0 +1,42 @@
+<html>
+    <head>
+        <meta charset="UTF-8" />       
+        
+        <style>
+            body {
+                font-family: "Helvetica Neue", "Helvetica", "Arial";
+            }
+            #box {
+                border: 1px solid rgb(200, 200, 200);
+                width: 400px;
+                height: 200px;
+            }
+            #box__heading {
+                margin-top: 5px;
+                margin-bottom: 0px;
+                padding-left: 5px;
+                padding-right: 5px;
+                border-bottom: 1px solid rgb(200, 200, 200);
+            }
+            
+
+        </style>
+        <script type="text/javascript" src="newElement.js"></script>
+    </head>
+    <body>
+        <div id="box">
+            <h3 id="box__heading">
+                Das hier ist die Überschrift
+
+                <span id="box__indicator"></span>
+            </h3>
+            <div id="box__content">
+                <ul id="items">
+                    <li>Apfel</li>
+                    <li>Birne</li>
+                </ul>
+            </div>
+        </div>
+        
+    </body>
+</html>
