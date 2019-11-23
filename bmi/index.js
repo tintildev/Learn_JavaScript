@@ -17,6 +17,8 @@ window.addEventListener("load", function() {
         let bmi = (weight / (height * height));
 
         alert("Dein BMI ist: " + bmi);
+        let bmiValue = document.getElementById("bmi");
+        bmiValue.appendChild(document.createTextNode("Dein BMI ist: " + bmi));
         });
     });
 
