@@ -21,6 +21,19 @@ window.addEventListener("load", function() {
         let bmiValue = document.getElementById("bmi");
         bmiValue.innerText = "Dein BMI ist: " + bmi;
 
+        //BMI Bedeutung
+        document.getElementById("weight-below").style.display ="none";
+        document.getElementById("weight-normal").style.display ="none";
+        document.getElementById("weight-above").style.display ="none";
+
+        if (bmi < 18.6){
+            document.getElementById("weight-below").style.display ="block";
+        }else if (bmi > 18.5 && bmi < 25){
+            document.getElementById("weight-normal").style.display ="block";
+        }else if (bmi > 25){
+            document.getElementById("weight-above").style.display ="block";
+        }
+
     }
 
     // Aktion bei Klick
