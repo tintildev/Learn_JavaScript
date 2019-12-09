@@ -3,9 +3,13 @@
 //Klasse
 class Person{
 
+
     //Constructor
     constructor(firstName, lasteName, age){
         console.log("constructor wurde ausgeführt");
+        this.firstName = firstName;
+        this.lasteName = lasteName;
+        this.age = age;
     }
 
     //Funktion für die Klasse
