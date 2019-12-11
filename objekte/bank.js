@@ -2,6 +2,7 @@
 
 class BankAccount {
     constructor(balance){
+        //JavaScript vorgabe, this Variable soll der Name mit _ beginnen. Damit man nicht von außen darauf zugreift (Datenkapselung).
         this._balance = balance;
     }
 
