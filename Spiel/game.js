@@ -33,7 +33,7 @@ class Renderer{
 
 class Game {
     constructor(element) {
-        this.render = new Renderer(element);
+        this.renderer = new Renderer(element);
     }
 
     start(){
