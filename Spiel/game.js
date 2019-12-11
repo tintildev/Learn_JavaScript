@@ -26,15 +26,28 @@ class Renderer{
     }
 
     //Bewegung
-    render(){
-        this.box.style.top ="40px";
+    render(position){
+        this.box.style.top = position + "px";
+    }
+}
+
+class Game {
+    constructor(element) {
+        this.render = new Renderer(element);
+    }
+
+    start(){
+        //Bewegung
+        let counter = 0;
+        setInterval(() =>{
+        counter = counter + 1;
+        this.renderer.render(counter);
+        }, 100);
     }
 }
 
 //Übergabe des Spielfelds
-let renderer = new Renderer(document.getElementById("game"));
 
-//Bewegung
-setInterval(() =>{
-    renderer.render();
-}, 1000);
+
+let game = new Game(document.getElementById("game"));
+game.start();
