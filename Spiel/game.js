@@ -27,7 +27,7 @@ class Renderer{
 
     //Bewegung
     render(){
-        this.box.style ="40px";
+        this.box.style.top ="40px";
     }
 }
 
