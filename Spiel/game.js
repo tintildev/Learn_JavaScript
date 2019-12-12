@@ -34,14 +34,21 @@ class Renderer{
 class Box {
     constructor(){
         this.position = 0;
+        this.speed = 0;
+
+        /**
+         * Negativer Speed: Nach oben
+         * Positiver Spedd: Nach unten
+         */
     }
     //Bewegungs Logik nach unten
     runLoop(){
-        this.position = this.position + 1;
+        this.speed++;
+        this.position = this.position + this.speed;
     }
     //Logik für nach oben
     moveUp(){
-        this.position = this.position - 20;
+        this.speed = -20;
     }
 }
 
@@ -50,6 +57,8 @@ class Game {
         this.renderer = new Renderer(element);
         this.box = new Box();
         this.element = element;
+        //Läuft das Spiel
+        this.isRunning = true;
         this.setup();
     }
 
@@ -61,10 +70,29 @@ class Game {
     }
 
     start(){ 
-        setInterval(() =>{
+        //Highscore
+        let counter = 0;
+
+        let timer = setInterval(() =>{
+            counter++;
             this.box.runLoop();
+            //Obere Rand
+            if(this.box.position < 0){
+                this.isRunning = false;
+                //Intervall abbrechen
+                clearInterval(timer);
+                alert("Oberer Rand erreicht: Gameover, " + counter + " Punkte!");
+            }
+            //Unterre Rand
+            if(this.box.position + 20 > this.element.clientHeight){
+                this.isRunning = false;
+                //Intervall abbrechen
+                clearInterval(timer);
+                alert("Unterer Rand erreicht: Gameover, " + counter + " Punkte!");
+            }
         this.renderer.render(this.box.position);
-        }, 100);
+        }, 40);
+        console.log(timer);
     }
 }
 
