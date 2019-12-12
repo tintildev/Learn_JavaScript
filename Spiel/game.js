@@ -30,18 +30,40 @@ class Renderer{
         this.box.style.top = position + "px";
     }
 }
+//Bewegungs Logik
+class Box {
+    constructor(){
+        this.position = 0;
+    }
+    //Bewegungs Logik nach unten
+    runLoop(){
+        this.position = this.position + 1;
+    }
+    //Logik für nach oben
+    moveUp(){
+        this.position = this.position - 20;
+    }
+}
 
 class Game {
     constructor(element) {
         this.renderer = new Renderer(element);
+        this.box = new Box();
+        this.element = element;
+        this.setup();
     }
 
-    start(){
-        //Bewegung
-        let counter = 0;
+    //Klick auf Box
+    setup(){
+        this.element.addEventListener("click", () =>{
+            this.box.moveUp();
+        }, false);
+    }
+
+    start(){ 
         setInterval(() =>{
-        counter = counter + 1;
-        this.renderer.render(counter);
+            this.box.runLoop();
+        this.renderer.render(this.box.position);
         }, 100);
     }
 }
