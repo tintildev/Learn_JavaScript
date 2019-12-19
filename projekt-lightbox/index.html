@@ -4,7 +4,14 @@
             .gallery-item img{
                 width: 150px;
                 height: auto;
+                float: left;
+                display: block;
+                text-decoration: none;
+                padding: 3px;
+                border: 1px solid rgb(200, 200, 200);
+                margin: 5px;
             }
+            
 
             #overlay{
                 position: absolute;
@@ -15,6 +22,23 @@
                 background-color: black;
                 opacity: 0.75;
             }
+            #overlay-container{
+                position: absolute;
+                top: 0px;
+                left: 0px;
+                right: 0px;
+                bottom: 0px;
+
+            }
+            #overlay-image{
+                max-width: 80%;
+                max-height: 80%;
+                margin-top: 10%;
+                margin-left: auto;
+                margin-right: auto;
+                display: block;
+            }
+
         </style>
     </head>
     <body>
