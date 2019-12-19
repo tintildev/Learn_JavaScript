@@ -1,6 +1,15 @@
 "use strict";
 
 jQuery(document).ready(function($){
+    //Schließ Mechanismus ESC
+    $(document).keydown(function(event){
+        if(event.key == "Escape"){
+            $("#overlay").remove();
+            $("#overlay-container").remove();
+        }
+    });
+
+
     $(".gallery-item").click(function(event){
         //Link folgen deaktiviert
         event.preventDefault();
@@ -22,12 +31,13 @@ jQuery(document).ready(function($){
 
         let conatiner = $.parseHTML("<div id='overlay-container'></div>");
 
-        //Schlies mechanismus
+        //Schließ Mechanismus Klick
         $(conatiner).click(function(){
             $("#overlay").remove();
             $("#overlay-container").remove();
 
         });
+
         $(conatiner).append(image);
 
         $("body").append(conatiner);
