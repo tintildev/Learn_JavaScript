@@ -4,8 +4,8 @@ jQuery.fn.lightbox = function(){
     //Schließ Mechanismus ESC
     $(document).keydown(function(event){
         if(event.key == "Escape"){
-            $("#overlay").remove();
-            $("#overlay-container").remove();
+            $("#lightbox__overlay").remove();
+            $("#lightbox__overlay-container").remove();
         }
     });
 
@@ -25,8 +25,8 @@ jQuery.fn.lightbox = function(){
 
         //Schließ Mechanismus Klick
         $(conatiner).click(function(){
-            $("#overlay").remove();
-            $("#overlay-container").remove();
+            $("#lightbox__overlay").remove();
+            $("#lightbox__overlay-container").remove();
 
         });
 
