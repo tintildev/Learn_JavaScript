@@ -13,15 +13,15 @@ jQuery.fn.lightbox = function(){
         //Link folgen deaktiviert
         event.preventDefault();
 
-        let overlay = $.parseHTML("<div id='overlay'></div>");
+        let overlay = $.parseHTML("<div id='lightbox__overlay'></div>");
         $("body").append(overlay);
 
         //Div mit CSS
-        let image = $.parseHTML("<img id='overlay-image'></img>");
+        let image = $.parseHTML("<img id='lightbox__overlay-image'></img>");
         let src = $(this).attr("href");
         $(image).attr("src", src);
 
-        let conatiner = $.parseHTML("<div id='overlay-container'></div>");
+        let conatiner = $.parseHTML("<div id='lightbox__overlay-container'></div>");
 
         //Schließ Mechanismus Klick
         $(conatiner).click(function(){
@@ -34,6 +34,6 @@ jQuery.fn.lightbox = function(){
 
         $("body").append(conatiner);
     });
-
+    return this;
 
 }
