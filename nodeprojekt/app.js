@@ -1,12 +1,17 @@
 "use strict";
 
-//Zugriff auf Car
-require("./Car.js");
+let express = require("express");
 
-for(let x = 0; x <= 10; x++){
-    console.log(x);
-}
+let app = express();
+app.set("view engine", "ejs");
+app.set("views", "./views");
 
-//Jetzt können wir Car nutzen
-let a = new Car();
-a.drive;
+app.get("/index", (req, res) =>{
+    res.render("index", {
+        title: "Mars"
+    });
+});
+
+app.listen(5000, () =>{
+    console.log("App wurde gestartet");
+})
