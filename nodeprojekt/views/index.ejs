@@ -1,9 +1,29 @@
 <html>
     <head>
-        <link rel="stylsheet" type="text/css" href="/css/app.css" />
-
+        <link rel="stylesheet" type="text/css" href="/css/app.css" />
     </head>
     <body>
-        <strong>Hallo Welt: <%= title %></strong>
+        <%= entries.length %>
+        <div id="guestbook-entries">
+            <% for(let entry of entries) { %>
+                <div class="entry">
+                    <h3><%= entry.title %></h3>
+                    <p><%= entry.content %></p>
+                </div>
+            <% } %>
+        </div>
+
+        <form class="new-entry" method="POST" action="/guestbook/new">
+            <label for="title">Titel:</label>
+            <input type="text" name="title" id="title" />
+            <br />
+            <label for="content">Inhalt:</label><br />
+            <textarea name="content" id="content"></textarea>
+            <br />
+            <input type="submit" value="Absenden!" />
+        </form>
+
+        <script type="text/javascript" src="/js/jquery-3.1.1.js"></script>
+        <script type="text/javascript" src="/js/index.js"></script>
     </body>
 </html>
