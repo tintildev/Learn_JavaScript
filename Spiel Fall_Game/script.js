@@ -1,4 +1,5 @@
 var character = document.getElementById("character");
+var drop = 0;
 var game = document.getElementById("game");
 var interval;
 //wird benötigt falls mach gleizeitig links und rechts drückt
@@ -48,7 +49,7 @@ document.addEventListener("keyup", event =>{
 
 
 //Blöcke erstellen
-setInterval(() => {
+var blocks = setInterval(() => {
     var blockLast = document.getElementById("block"+(counter-1));
     var holeLast = document.getElementById("block"+(counter-1));
 
@@ -81,14 +82,51 @@ setInterval(() => {
         counter++;
     }
 
+    var characterTop = parseInt(window.getComputedStyle(character).getPropertyValue("top"));
+    var characterLeft = parseInt(window.getComputedStyle(character).getPropertyValue("left"));
+    
+    //Game Over
+    if(characterTop <= 0){
+        alert("Game over. Score: "+(counter-9));
+        clearInterval(blocks);
+        location.reload();
+    }
+
+    //Bewegung der Blöcke nach unten
     for(var i = 0; i < currentBlocks.length; i++){
         let current = currentBlocks[i];
         let iblock = document.getElementById("block"+current);
         let ihole = document.getElementById("hole"+current);
         let iblockTop = parseInt(window.getComputedStyle(iblock).getPropertyValue("top"));
+        let iholeLeft = parseFloat(window.getComputedStyle(ihole).getPropertyValue("left"));
         iblock.style.top = iblockTop - 0.5 + "px";
         ihole.style.top = iblockTop - 0.5 + "px";
+
+        //Blöcke löschen wenn sie unten sind
+        if(iblockTop < -20){
+            currentBlocks.shift();
+            iblock.remove();
+            ihole.remove();
+        }
+
+        //Damit der Charakter auf den Blöcken bleibt
+        if(iblockTop-20<characterTop && iblockTop>characterTop){
+            drop++;
+            if(iholeLeft<=characterLeft && iholeLeft+20>characterLeft){
+                drop = 0;
+            }
+        }
     }
+
+    //Damit der Charakter fällt
+    if(drop==0){
+        if(characterTop < 480){
+            character.style.top = characterTop + 2 + "px";
+        }
+    }else{
+        character.style.top = characterTop - 0.5 + "px";
+    }
+
 
     
 }, 1);
