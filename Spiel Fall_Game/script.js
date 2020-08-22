@@ -4,6 +4,8 @@ var interval;
 //wird benötigt falls mach gleizeitig links und rechts drückt
 var both = 0;
 
+var counter = 0;
+
 function moveLeft(){
     var left = parseInt(window.getComputedStyle(character).getPropertyValue("left"));
 
@@ -45,17 +47,36 @@ document.addEventListener("keyup", event =>{
 
 
 //Blöcke erstellen
-var block = document.createElement("div");
-var hole = document.createElement("div");
-block.setAttribute("class", "block");
-hole.setAttribute("class", "hole");
-block.setAttribute("id", "block");
-hole.setAttribute("id", "hole");
+setInterval(() => {
+    var blockLast = document.getElementById("block"+(counter-1));
+    var holeLast = document.getElementById("block"+(counter-1));
 
-//Loch Random Wert
-var random = Math.floor(Math.random() * 360);
-hole.style.left = random + "px";
+    if(counter>0){
+        var blockLastTop = parseInt(window.getComputedStyle(blockLast).getPropertyValue("top"));
+        var holeLastTop = parseInt(window.getComputedStyle(holeLast).getPropertyValue("top"));
+    }
+    
+    //Neue Blöcke nur erstellen wenn letzer durchgelaufen ist.
+    if(blockLastTop<400 || counter == 0){
+        var block = document.createElement("div");
+        var hole = document.createElement("div");
+        block.setAttribute("class", "block");
+        hole.setAttribute("class", "hole");
+        block.setAttribute("id", "block"+counter);
+        hole.setAttribute("id", "hole"+counter);
 
-//Hinzufügen
-game.appendChild(block);
-game.appendChild(hole);
+        block.style.top = blockLastTop + 100 + "px";
+        hole.style.top = holeLastTop + 100 + "px";
+
+        //Loch Random Wert
+        var random = Math.floor(Math.random() * 360);
+        hole.style.left = random + "px";
+
+        //Hinzufügen
+        game.appendChild(block);
+        game.appendChild(hole);
+        counter++;
+    }
+
+    
+}, 1);
