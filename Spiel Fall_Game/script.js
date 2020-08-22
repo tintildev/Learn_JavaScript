@@ -5,6 +5,7 @@ var interval;
 var both = 0;
 
 var counter = 0;
+var currentBlocks = [];
 
 function moveLeft(){
     var left = parseInt(window.getComputedStyle(character).getPropertyValue("left"));
@@ -75,7 +76,18 @@ setInterval(() => {
         //Hinzufügen
         game.appendChild(block);
         game.appendChild(hole);
+
+        currentBlocks.push(counter);
         counter++;
+    }
+
+    for(var i = 0; i < currentBlocks.length; i++){
+        let current = currentBlocks[i];
+        let iblock = document.getElementById("block"+current);
+        let ihole = document.getElementById("hole"+current);
+        let iblockTop = parseInt(window.getComputedStyle(iblock).getPropertyValue("top"));
+        iblock.style.top = iblockTop - 0.5 + "px";
+        ihole.style.top = iblockTop - 0.5 + "px";
     }
 
     
