@@ -21,6 +21,8 @@ body{
     
 }
 
+/* Start Styling */
+
 .container {
     display: grid;
     grid-template-rows: 10vw 40vw 10vw;
@@ -35,8 +37,26 @@ body{
     padding: 1rem;
 }
 
-.container h1{
+.App h1{
     text-transform: uppercase;
     font-weight: 600;
     text-align: center;
+}
+
+#inputField {
+    border: 1px solid black;
+    outline: none;
+    font-size: 2.5rem;
+    height: 4rem;
+    vertical-align: middle;
+    box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.3);
+}
+
+#addButton{
+    border: 1px solid black;
+    font-size: 3rem;
+    height: 4rem;
+    vertical-align: middle;
+    box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.3);
+    background-color: white;
 }
