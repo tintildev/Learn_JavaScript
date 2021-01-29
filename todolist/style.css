@@ -80,6 +80,11 @@ body{
     color: var(--secondcolor);
 }
 
+#addButton:hover{
+    background-color: var(--secondcolor);
+    color: var(--secondcolor-light);
+}
+
 .paragraph{
     cursor: pointer;
     font-size: 20px;

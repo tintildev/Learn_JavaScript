@@ -8,6 +8,7 @@ addToDoButton.addEventListener('click', function(){
     paragraph.className = 'paragraph';
     paragraph.innerText = myInputField.value;
     toDoContainer.appendChild(paragraph);
+    myInputField.value ="";
 
     //crossed out 
     paragraph.addEventListener('click', function(){
