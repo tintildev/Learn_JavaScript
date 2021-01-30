@@ -8,7 +8,7 @@ setInterval(function(){
 },1000)
 
 //Eventlistener, gib eine Ausgabe wenn ein Button geklickt wurde.
-window.addEventListene("load", function(){
+window.addEventListener("load", function(){
     document.getElementById("click-me").addEventListener("click", function(){
         console.log("Button wurde gedrückt");
     
