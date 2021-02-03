@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">       
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="style.css">
+        <title>Expanse</title>
+    </head>
+    <body>
+        <div class="container">
+            <div class="App">
+                <h1>Expanse Tracker</h1>
+                <div class="input">
+                    <form class="input__form">
+                        <label id="inputLabel--Name" class="inputLabel">Name:</label>
+                        <input id="inputField--Name" class="inputField" type="text"></input>
+                        <label id="inputLabel--Date" class="inputLabel">Date:</label>
+                        <input id="inputField--Date" class="inputField" type="date"></input>
+                        <label id="inputLabel--Amount" class="inputLabel">Amount:</label>
+                        <input id="inputField--Amount" class="inputField" type="number"></input>
+                        <input type="submit" id="addButton" value="Add Expense"></input>
+                    </form>
+                </div>
+                
+                <!--Container for to dos-->
+                <div class="expanse" id="expanseList">
+                </div>
+            </div>
+        </div>
+        <!--JS File-->
+        <script src="main.js"></script>
+    </body>
+</html>
