@@ -39,7 +39,7 @@ body{
 
 .container {
     display: grid;
-    grid-template-rows: 5vw 40vw 5vw;
+    grid-template-rows: 5vh 40vh 5vh;
     grid-template-columns: 10vw max-content 10vw;
 }
 
