@@ -11,20 +11,32 @@
             <div class="App">
                 <h1>Expanse Tracker</h1>
                 <div class="input">
-                    <form class="input__form">
+                    <form class="input__form" id="myForm" action="#">
                         <label id="inputLabel--Name" class="inputLabel">Name:</label>
-                        <input id="inputField--Name" class="inputField" type="text"></input>
+                        <input id="inputField--Name" class="inputField" type="text">
                         <label id="inputLabel--Date" class="inputLabel">Date:</label>
-                        <input id="inputField--Date" class="inputField" type="date"></input>
+                        <input id="inputField--Date" class="inputField" type="date">
                         <label id="inputLabel--Amount" class="inputLabel">Amount:</label>
-                        <input id="inputField--Amount" class="inputField" type="number"></input>
-                        <input type="submit" id="addButton" value="Add Expense"></input>
+                        <input id="inputField--Amount" class="inputField" type="number">
+                        <input type="submit" id="addButton" value="Add Expense">
                     </form>
                 </div>
-                
-                <!--Container for to dos-->
-                <div class="expanse" id="expanseList">
-                </div>
+            </div>
+            <!--Container for to dos-->
+            <div id="container--list">
+                <table class="expanse">
+                    <thead>
+                        <tr>
+                            <th>Date</th>
+                            <th>Name</th>
+                            <th>Amount</th>
+                        </tr>
+                    </thead>
+                    <tbody id="expanseList">
+
+                    </tbody>
+                    
+                </table>
             </div>
         </div>
         <!--JS File-->

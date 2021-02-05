@@ -1,23 +1,55 @@
-let addToDoButton = document.getElementById('addButton');
-let toDoContainer = document.getElementById('expanseList');
-let myInputField = document.getElementById('inputField');
+    let fromSubmit = document.getElementById('myForm');
+    let containerList = document.getElementById('container--list');
+    let expanseContainer = document.getElementById('expanseList');
+    let myInputFieldName = document.getElementById('inputField--Name');
+    let myInputFieldDate = document.getElementById('inputField--Date');
+    let myInputFieldAmount = document.getElementById('inputField--Amount');
 
-//add function
-addToDoButton.addEventListener('click', function(){
-    var paragraph = document.createElement('p');
-    paragraph.className = 'paragraph';
-    paragraph.innerText = myInputField.value;
-    toDoContainer.appendChild(paragraph);
-    myInputField.value ="";
+    //add function
+    fromSubmit.addEventListener("submit", function(){
+        containerList.style.display ="block";
+        
+        console.log("Submit ausgeführt")
+        var trElement = document.createElement('tr');
+        trElement.className = 'trElement';
 
-    //crossed out 
-    paragraph.addEventListener('click', function(){
-        this.innerHTML = '<del>'+ this.innerHTML + '</del>';
-        //remove
-        this.addEventListener('click', function(){
-            this.parentNode.removeChild(this);
+        var tdElementName = document.createElement('td');
+        tdElementName.className = 'tdElement';
+        console.log(myInputFieldName.value);
+        tdElementName.innerText = myInputFieldName.value;
+
+        var tdElementDate = document.createElement('td');
+        tdElementDate.className = 'tdElement';
+        tdElementDate.innerText = myInputFieldDate.value;
+
+        var tdElementAmount = document.createElement('td');
+        tdElementAmount.className = 'tdElement';
+        tdElementAmount.innerText = myInputFieldAmount.value;
+
+
+        trElement.appendChild(tdElementDate);
+        trElement.appendChild(tdElementName);
+        trElement.appendChild(tdElementAmount);
+
+        expanseContainer.appendChild(trElement);
+
+        myInputFieldName.value ="";
+        myInputFieldDate.value = "";
+        myInputFieldAmount.value = "";
+
+
+        //crossed out 
+        trElement.addEventListener('click', function(){
+            tdElementDate.innerHTML = '<del>'+ tdElementDate.innerHTML + '</del>';
+            tdElementName.innerHTML = '<del>'+ tdElementName.innerHTML + '</del>';
+            tdElementAmount.innerHTML = '<del>'+ tdElementAmount.innerHTML + '</del>';
+            //remove
+            this.addEventListener('click', function(){
+                this.parentNode.removeChild(this);
+            })
         })
     })
-})
+
+
 
 
