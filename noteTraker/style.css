@@ -1,0 +1,144 @@
+/*CSS variables*/
+
+:root {
+    --maincolor: #75cfb8;
+    --maincolor-light: #bbdfc8;
+
+    --secondcolor: #ffc478;
+    --secondcolor-light: #ffee93;
+
+    --color-grey: #eef8ff;
+    --color-grey-light: #dff2ff;
+
+    --color-white: white;
+    --color-black: black;
+  }
+
+
+/* Default Values */
+*,
+*::before,
+*::after{
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+}
+
+html{
+    box-sizing: border-box;
+    font-size: 62.5%;
+    /*10px/16px = 62.5% -> 1rem = 10px */
+}
+
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    color: var(--black);
+    font-weight: 300;
+    line-height: 1.6;
+    
+}
+
+/* Start Styling */
+
+.container {
+    display: flex;
+    padding: 2rem;
+    align-items: center;
+    justify-content: center;
+}
+
+.App{
+    border: var(--black) 1px solid;
+    box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.3);
+    padding: 1rem;
+    background-color: var(--maincolor);
+    width: 500px;
+    height: auto;
+}
+
+.App h1{
+    padding: 1rem;
+    text-transform: uppercase;
+    font-weight: 600;
+    text-align: center;
+    color: var(--color-grey);
+}
+
+#form {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-row-gap: 2rem;
+}
+
+#labelInputField {
+    grid-row: 2 / 3;
+    grid-column: 1 / 2;
+    text-transform: uppercase;
+    font-size: 1.5rem;
+    color: var(--color-grey-light);
+}
+
+
+#inputField {
+    grid-row: 3 / 4;
+    grid-column: 1 / 3;
+    border: 1px solid var(--black);
+    outline: none;
+    font-size: 2.5rem;
+    height: 4rem;
+    vertical-align: middle;
+    box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.3);
+    background-color: var(--maincolor-light);
+    color: var(--color-grey-light);
+}
+
+#addButton{
+    grid-row: 4 / 5;
+    grid-column: 1 / 3;
+    border: 1px solid var(--black);
+    font-size: 3rem;
+    height: 4rem;
+    vertical-align: middle;
+    box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.3);
+    background-color: var(--maincolor-light);
+    color: var(--color-grey-light);
+}
+
+#addButton:hover{
+    background-color: var(--maincolor);
+    color: var(--color-grey);
+}
+
+.paragraph{
+    cursor: pointer;
+    font-size: 20px;
+    height: 20rem;
+    overflow: hidden;
+    color: var(--color-grey-light);
+}
+
+.container--Notes {
+    background-color: var(--color-white);
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-row-gap: 2rem;
+    grid-column-gap: 2rem;
+}
+
+.notesList{
+    background-color: var(--secondcolor);
+    color: var(--color-grey-light);
+    box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.3);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+}
+
+.NotesDetails {
+    width: 50%;
+    height: 2rem;
+    background-color: var(--color-grey);
+    color: var(--color-black);
+    margin: auto;
+}
