@@ -1,3 +1,5 @@
+"use strict";
+
 let formElement = document.getElementById('form');
 let containerNotes = document.getElementById('containerNotes');
 let myInputField = document.getElementById('inputField');
@@ -22,6 +24,10 @@ formElement.addEventListener('submit', function(){
     container.appendChild(button);
     containerNotes.appendChild(container);
     myInputField.value ="";
+
+    button.addEventListener("click", function(){
+        
+    })
 
 })
 
