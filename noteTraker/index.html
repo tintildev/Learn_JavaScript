@@ -7,18 +7,20 @@
         <title>Note Tracker</title>
     </head>
     <body>
-        <div class="container">
-            <div class="App">
-                <h1>Add a new Note:</h1>
-                <form action="#" id="form">
-                    <label for="inputField" id="labelInputField">Note:</label>
-                    <textarea id="inputField" name="inputField">Write your new Note.</textarea>
-                    <input type="submit" id="addButton" value="Add Note">
-                </form>
+        <div class="container" id="mainContainer">
+            <div class="container--App">
+                <div class="App">
+                    <h1>Add a new Note:</h1>
+                    <form action="#" id="form">
+                        <label for="inputField" id="labelInputField">Note:</label>
+                        <textarea id="inputField" name="inputField">Write your new Note.</textarea>
+                        <input type="submit" id="addButton" value="Add Note">
+                    </form>
+                </div>
             </div>
-        </div>
-        <!--Container for Notes-->
-        <div class="container--Notes" id="containerNotes">
+            <!--Container for Notes-->
+            <div class="container--Notes" id="containerNotes">
+            </div>
         </div>
         <!--JS File-->
         <script src="main.js"></script>
