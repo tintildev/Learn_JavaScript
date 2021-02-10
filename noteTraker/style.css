@@ -126,8 +126,11 @@ body{
     flex-direction: column;
     align-items: center;
     max-width: 40rem;
+    overflow: hidden;
     
 }
+
+
 
 .NotesDetails {
     width: 50%;
@@ -157,9 +160,11 @@ body{
 }
 
 .paragraph{
+    padding: 1rem;
     font-size: 20px;
     height: 20rem;
     overflow: hidden;
     color: var(--color-grey-light);
+    overflow-wrap: break-word;
 }
 
