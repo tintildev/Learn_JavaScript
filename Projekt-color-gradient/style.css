@@ -1,0 +1,52 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+*,
+*::before,
+*::after{
+    box-sizing: inherit;
+}
+
+html{
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+}
+
+.App{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    height: 100vh;
+    width: 100vw;
+}
+
+.Explanation{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    flex-direction: column;
+    height: 50vh;
+    width: 100%;
+}
+
+.Result{
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    text-align: center;
+    flex-direction: column;
+    height: 50vh;
+    width: 100%;
+}
+
+h1, h2 {
+    text-transform: uppercase;
+}
