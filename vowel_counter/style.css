@@ -72,6 +72,7 @@ body{
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     grid-row-gap: 2rem;
+    padding-bottom: 2rem;
 }
 
 #inputText {
@@ -95,6 +96,13 @@ body{
 
 #CheckButton:hover{
     background-color: var(--secondcolor-light);
+}
+
+#result{
+    background-color: var(--secondcolor);
+    color: var(--color-white);
+    margin: 1rem;
+    padding: 1rem;
 }
 
 
