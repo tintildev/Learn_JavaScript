@@ -37,50 +37,50 @@ With this repository I want to learn JavaScript and do as many small projects as
 
 ### Screenshot
 BMI:  
-![](./images/bmi.png)  
+![](./images/bmi.PNG)  
 
 Change Color:  
-![](./images/changeColor.png)  
+![](./images/changeColor.PNG)  
 
 
 Click Counter:  
-![](./images/clickCounter.png)  
+![](./images/clickCounter.PNG)  
 
 
 Expanse:  
-![](./images/ExpanseTracker.png)  
+![](./images/ExpanseTracker.PNG)  
 
 
 Game 1:  
-![](./images/game1.png)  
+![](./images/game1.PNG)  
 
 
 Hex Color:  
-![](./images/hexColorGradient.png)  
+![](./images/hexColorGradient.PNG)  
 
 
 Jumpgame:  
-![](./images/jumpGame.png)  
+![](./images/jumpGame.PNG)  
 
 
 Baby Feed:  
-![](./images/babyFeed.png)  
+![](./images/babyFeed.PNG)  
 
 
 Lightbox:  
-![](./images/lightbox.png)  
+![](./images/lightbox.PNG)  
 
 
 Fall game:  
-![](./images/fallingGameR.png)  
+![](./images/fallingGameR.PNG)  
 
 
 Todolist:  
-![](./images/todolist.png)  
+![](./images/todolist.PNG)  
 
 
 Vowel Counter:  
-![](./images/vowelCounter.png)  
+![](./images/vowelCounter.PNG)  
 
 ### Resources
 I'm just trying to use my own pictures and icons.
