@@ -17,7 +17,7 @@ class Renderer{
         box.style.left="20px";
 
         //Inhalt
-        box.style.backgroundColor ="red";
+        box.style.backgroundColor ="#E8E8A6";
         box.style.width = "20px";
         box.style.height ="20px";
 
