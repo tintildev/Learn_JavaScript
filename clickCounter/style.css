@@ -1,0 +1,41 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+*,
+*::before,
+*::after{
+    box-sizing: inherit;
+}
+
+html{
+    box-sizing: border-box;
+}
+
+body{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.container{
+    background-color: #F9F7F7;
+    color: #3F72AF;
+    width: 20rem;
+    height: 10rem;
+    padding: 1rem;
+    border: solid 1px #112D4E;
+    text-align: center;
+}
+
+#button{
+    background-color: #DBE2EF;
+    color: #112D4E;
+}
+
+#counter {
+    font-size: 2rem;
+}
+
