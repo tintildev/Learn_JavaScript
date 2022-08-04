@@ -10,19 +10,19 @@
         containerList.style.display ="block";
         
         console.log("Submit ausgeführt")
-        var trElement = document.createElement('tr');
+        let trElement = document.createElement('tr');
         trElement.className = 'trElement';
 
-        var tdElementName = document.createElement('td');
+        let tdElementName = document.createElement('td');
         tdElementName.className = 'tdElement';
         console.log(myInputFieldName.value);
         tdElementName.innerText = myInputFieldName.value;
 
-        var tdElementDate = document.createElement('td');
+        let tdElementDate = document.createElement('td');
         tdElementDate.className = 'tdElement';
         tdElementDate.innerText = myInputFieldDate.value;
 
-        var tdElementAmount = document.createElement('td');
+        let tdElementAmount = document.createElement('td');
         tdElementAmount.className = 'tdElement';
         tdElementAmount.innerText = myInputFieldAmount.value;
 

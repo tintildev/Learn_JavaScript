@@ -17,6 +17,7 @@ body{
     display: flex;
     align-items: center;
     justify-content: center;
+    flex-direction: column;
 }
 
 .container{
@@ -31,4 +32,23 @@ body{
     width: 200px;
     height: 400px;
     position: relative;
+}
+
+.previous{
+    background-color: #f8e978;
+    color: black;
+    border: solid 1px #F7DF1E;
+    border-radius: 0;
+    font-family: "Lato", sans-serif;;
+    font-size: 1.5rem;
+    font-weight: 400;
+    text-transform: uppercase;
+    padding: 1.8rem 3rem;
+    cursor: pointer;
+    transition: all .2s;
+    margin: 1rem;
+}
+
+.previous:hover {
+    background-color: #ffe100;
 }
