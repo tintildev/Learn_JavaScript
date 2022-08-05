@@ -1,16 +1,22 @@
 <!DOCTYPE html>
-<html lang="de" onclick="jump()" onkeypress="jump()">
+<html lang="de">
     <head>
         <meta charset="UTF-8">
         <title>Mein Spiel 2</title>
         <link rel="stylesheet" href="style.css">
     </head>
     <body>
-        <div id="game">
-            <div id="character"></div>
-            <div id="block"></div>
+        <div class="container">
+            <div id="game">
+                <div id="character"></div>
+                <div id="block"></div>
+            </div>
+            <div class="controll">
+                <button class="gameBtn" id="jump">Jump</button>
+                <button class="gameBtn" id="start">Start</button>
+            </div>
+            <a href="../index.html" class="previous">&laquo; Back to overview</a>
         </div>
-
         <script src="script.js"></script>
     </body>
 </html>

@@ -3,12 +3,27 @@
     margin: 0;
 }
 
+.container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.gameBtn{
+    color: white;
+    background-color: lightblue;
+    width: 10rem;
+    height: 5rem;
+    font-size: 1.4rem;
+}
+
 #game{
     width: 500px;
     height: 200px;
     border: 1px solid black;
     margin: 50px;
-    posit;
+    overflow: hidden;
 }
 
 #character {
@@ -37,12 +52,34 @@
     position: relative;
     top: 70px;
     left: 480px;
-    animation: block 1s infinite linear;
     background-image: url('kaktus.png');
     background-repeat: no-repeat;
+}
+
+.block-animate{
+    animation: block 1s infinite linear;
 }
 
 @keyframes block{
     0%{left: 480px;}
     100%{left: -40px;}
+}
+
+.previous{
+    background-color: #f8e978;
+    color: black;
+    border: solid 1px #F7DF1E;
+    border-radius: 0;
+    font-family: "Lato", sans-serif;;
+    font-size: 1.5rem;
+    font-weight: 400;
+    text-transform: uppercase;
+    padding: 1.8rem 3rem;
+    cursor: pointer;
+    transition: all .2s;
+    margin: 1rem;
+}
+
+.previous:hover {
+    background-color: #ffe100;
 }
