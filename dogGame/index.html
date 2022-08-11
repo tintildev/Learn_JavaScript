@@ -15,25 +15,32 @@
         </div>
         <div class="app">
             <div class="gamefield">
+                <div id="life">
+                    <img src="herz-1.png" alt="heart" id="1" />
+                    <img src="herz-1.png" alt="heart" id="2" />
+                    <img src="herz-1.png" alt="heart" id="3" />
+                </div>
+                <div class="score">
+                    <p id="scoreValue">Score: </p>
+                </div>
                 <div class="player">
                     <img src="prinzessin.png" alt="Player" />
                 </div>
-                <div class="ball">
+                <div id="ball">
                     <img src="Ball.jpg" alt="Ball" />
                 </div>
-                <div class="dog">
+                <div id="dog">
                     <img src="dog.jpg" alt="Dog" />
                 </div>
             </div>
             <div class="controll">
-                <p>Versuche:<span class="versuche"></span></p>
-                <form>
-                    <label>Stärke des Wurfs:</label>
-                    <input type="number"></input>
-                    <button type="submit">Werfen</button>
-                </form>
+                <label>Stärke des Wurfs:</label>
+                <input type="number" min="1" max="5" id="valueField" placeholder="1-5"></input>
+                <button type="submit" class="btn" id="btn">Werfen</button>
             </div>
         </div>
+        <a href="../index.html" class="previous">&laquo; Back to overview</a>
     </div>
+    <script src="script.js"></script>
 </body>
 </html>
