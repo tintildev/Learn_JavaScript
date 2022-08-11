@@ -4,7 +4,6 @@
 class Renderer{
     constructor(element){
         this.element = element;
-        this.setup(); 
     }
     
     setup(){
@@ -28,9 +27,9 @@ class Renderer{
     }
 
     myRemove(){
-        this.box.remove();
         this.box.style.top="5px";
         this.box.style.left="20px";
+        this.box.remove();
     }
 
     //Bewegung
@@ -40,7 +39,8 @@ class Renderer{
 }
 //Bewegungs Logik
 class Box {
-    constructor(){
+    constructor(element){
+        this.renderer = new Renderer(element);
         this.position = 0;
         this.speed = 0;
 
@@ -49,6 +49,12 @@ class Box {
          * Positiver Spedd: Nach unten
          */
     }
+    restart(){
+        this.position = 0;
+        this.speed = 0;
+        this.renderer.setup();
+    }
+
     //Bewegungs Logik nach unten
     runLoop(){
         this.speed++;
@@ -67,18 +73,22 @@ class Box {
 
 class Game {
     constructor(element) {
-        this.renderer = new Renderer(element);
-        this.box = new Box();
+        this.box = new Box(element);
         this.element = element;
         
         //Läuft das Spiel
-        this.isRunning = true;
+        this.isRun = true;
         this.setup();
         this.space();
     }
 
+    isRunning(){
+        return this.isRun;
+    }
+
     //Klick auf Box
     setup(){
+        this.box.renderer.setup();
         this.element.addEventListener("click", () =>{
             this.box.moveUp("Klick");
         }, false);
@@ -95,9 +105,9 @@ class Game {
 
 
     start(){ 
+        this.isRun = false;
         //Highscore
         let counter = 0;
-
         let timer = setInterval(() =>{
             counter++;
             this.box.runLoop();
@@ -110,22 +120,25 @@ class Game {
 
             //Obere Rand
             if(this.box.position < 0){
-                this.isRunning = false;
+                this.isRun = true;
                 //Intervall abbrechen
                 clearInterval(timer);
                 alert("Oberer Rand erreicht: Gameover, " + counter + " Punkte!");
-                this.renderer.myRemove();
+                this.box.renderer.myRemove();
+                this.box.restart()
+                console.log(this.box.renderer.position);
             }
             //Unterre Rand
             if(this.box.position + 20 > this.element.clientHeight){
-                this.isRunning = false;
+                this.isRun = true;
                 //Intervall abbrechen
                 clearInterval(timer);
                 alert("Unterer Rand erreicht: Gameover, " + counter + " Punkte!");
-                this.renderer.myRemove();
-                
+                this.box.renderer.myRemove();
+                this.box.restart()
+                console.log(this.box.renderer.position);
             }
-        this.renderer.render(this.box.position);
+        this.box.renderer.render(this.box.position);
         }, 40);
         console.log(timer);
     }
@@ -134,8 +147,10 @@ class Game {
 //Übergabe des Spielfelds
 let jumpBtn = document.getElementById("jump");
 let startBtn = document.getElementById("start");
+let game = new Game(document.getElementById("game"));
 start.addEventListener("click", function(){
-    let game = new Game(document.getElementById("game"));
-    game.start();
+    if(game.isRunning()){
+        game.start();
+    }
 })
 
