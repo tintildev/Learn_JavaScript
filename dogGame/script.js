@@ -1,50 +1,88 @@
 let valueField = document.getElementById("valueField");
-let dog = document.getElementById("dog");
-let ball = document.getElementById("ball");
 let btn = document.getElementById("btn");
 let scoreValue = document.getElementById("scoreValue");
 let life = document.getElementById("life");
-let versuche = 3;
-let score = 0;
+let gamefield = document.getElementById("gamefield");
+let ball = document.createElement("div");
+let left = 400;
+
+
 
 class Game{
   constructor(){
     this.life = life;
+    this.ball = ball;
+    this.gamefield = gamefield;
+    this.setup();
+    let versuche = 3;
+    let score = 0;
+    this.versuche = versuche;
+    this.score = score;
+    this.left = left;
+  }
+
+  setup(){
+    this.ball.id = "ball";
+    //Inhalt
+    this.ball.style.width = "20px";
+    this.ball.style.height ="20px";
+
+    //Einfügen
+    this.gamefield.appendChild(this.ball);
+
+    this.setleftPosition(left);
+  }
+
+  changePosition(newPosition){
+    this.ball.style.animationName = "a" + newPosition;
+    console.log("a" + newPosition);
+  }
+
+  setleftPosition(leftValue){
+    console.log(leftValue);
+    //Set Dog Position
+    document.getElementById("Dog").style.left = leftValue + "px";
   }
 
   berechne(){
-      let rect = dog.getBoundingClientRect();
-      console.log(rect.left);
-      
-      if(versuche > 0){
-        //Ganz Zahl ohne Kommawert Math.trunc
-        if(Math.trunc((rect.left / 100)) == valueField.value ){
-          console.log("Erfolgreich")
-          ball.style.zIndex = 1;
-          score = score + 100;
-          scoreValue.innerHTML = "Score: " + score;
-          let temp = Math.random() * (500 - 100) + 100
-          dog.style.left = temp + "px";
+        if(this.versuche > 0){
+          console.log("Werte : " + (this.left / 100 ) + " und " + valueField.value)
+          if(this.left / 100 == valueField.value ){
+            console.log("Erfolgreich")
+            this.score = this.score + 100;
+            scoreValue.innerHTML = "Score: " + this.score;
+  
+            //new position Dog
+            this.left = Math.random() * (400 - 100) + 100;
+            this.setleftPosition(this.left);
+  
+            //move ball
+            console.log("Wert: " + valueField.value);
+            this.changePosition(valueField.value);
+            
+          }else{
+            let changeImg = document.getElementById(this.versuche);
+            changeImg.src = "herz.png";
+            this.versuche -= 1;
+            console.log(this.versuche);
+            scoreValue.value = " "; 
+  
+            //move ball
+            console.log("Wert: " + valueField.value);
+            this.changePosition(valueField.value);
+            
+          }
         }else{
-          console.log("Nicht Erfolgreich " + Math.trunc(rect.left / 100));
-          let changeImg = document.getElementById(versuche);
-          changeImg.src = "herz.png";
-          versuche -= 1;
-          console.log(this.versuche);
-          scoreValue.value = " "; 
+          // TODO Game Over
+          
+         
         }
-      }else{
-        // TODO Game Over
       
-       
-      }
-      
-  };
+    }
 }
 
 btn.addEventListener("click", () => {
   let game = new Game();
-  ball.style.left = (valueField.value * 100) + "px";
   game.berechne();
 
   

@@ -49,6 +49,7 @@ html{
     width: 10rem;
     height: 5rem;
     font-size: 1.4rem;
+    transform: 1s;
 }
 .gameBtn:hover{
     background-color: white;
