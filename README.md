@@ -92,8 +92,10 @@ I'm just trying to use my own pictures and icons.
 - Images: my personal pictures
 - Icons: my personal icons
 
-## Author
+## Author TintilDev
+- Website - [TintilDev](https://github.com/tintildev)
+- Frontend Mentor - [Tintildev](https://www.frontendmentor.io/profile/tintildev)
+- Bluesky - [@tintildev‬](https://bsky.app/profile/tintildev.bsky.social)
+- LinkedIn - [Martin Klestil](https://www.linkedin.com/in/martin-klestil/)
+- Dev.to [TintilDev](https://dev.to/tintildev)
 
-- Website - [Martin Klestil](https://github.com/mklestil)
-- Twitter - [@mklestil](https://twitter.com/MKlestil)
-- Linkedin - [@mklestil](https://www.linkedin.com/in/martin-klestil/)
