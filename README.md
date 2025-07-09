@@ -37,7 +37,7 @@ With this repository I want to learn JavaScript and do as many small projects as
 - vowel counter - counter the words
 
 ### Links
-- Live Site URL: [Here is my live solution](https://mklestil.github.io/Learn_JavaScript/)
+- Live Site URL: [Here is my live solution](https://tintildev.github.io/Learn_JavaScript/)
 
 ### Screenshot
 BMI:  
